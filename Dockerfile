@@ -15,8 +15,10 @@ RUN git clone https://github.com/django/django.git
 
 COPY . /app
 
+ENV PYTHONUNBUFFERED=1
+
 EXPOSE 5000
 
-ENTRYPOINT ["python"]
+ENTRYPOINT ["python3"]
 
-CMD ["index.py"]
+CMD ["index.py","runserver","0.0.0.0:5000"]

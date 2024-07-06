@@ -12,6 +12,9 @@ Proyek ini dibuat sebagai bagian dari tugas mata kuliah Pemrograman Web, dengan 
   * Tugas 4 -> Run Django-Framework with Docker Container (Repair Dockerfile).
   * Tugas 5 -> Update Logic for Update and Delete.
 
+  * Tugas API 1 -> Create API with Methods PUT & DELETE
+
+
 
 ## 
 

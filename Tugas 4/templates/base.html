@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>WORK PROJ</title>
+
+    {% include 'header.html' %}
+    {% include 'base_css.html' %}
+
+</head>
+
+<body>
+    <!--Body-->
+    <style type="text/css">
+        .main{
+            min-height: 100vh;
+            height: 100%;
+        }
+    </style>
+    <div class="main">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+
+    <!-- End -->
+
+    {% include 'footer.html' %}
+</body>
+
+</html>

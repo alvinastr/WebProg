@@ -1,6 +1,6 @@
 ![Logo Django](https://www.djangoproject.com/m/img/logos/django-logo-negative.png)
 
-**Tugas mata kuliah Pemrograman Web, dengan fokus pada pengembangan aplikasi web menggunakan:**
+**Tugas mata kuliah Pemrograman Web, aplikasi web dengan menggunakan:**
 
 * **Bahasa Pemrograman:** Python
 * **Framework:** Django

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style type="text/css">
+.delete-student {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+h1 {
+  margin-top: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #666;
+}
+
+form {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn +.btn {
+  margin-left: 10px;
+}
+</style>
+  <h1>Delete Student</h1>
+  <p>Are you sure you want to delete {{ object }}?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="{% url 'account:read-data-student' %}" class="btn btn-secondary">Cancel</a>
+  </form>
+{% endblock %}

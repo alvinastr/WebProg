@@ -6,7 +6,7 @@ Proyek ini dibuat sebagai bagian dari tugas mata kuliah Pemrograman Web, dengan 
 * **Framework:** Django
 
 ## Tugas
-| * Tugas 1 -> Build Integration Docker with Django-Framework.
+  * Tugas 1 -> Build Integration Docker with Django-Framework.
   * Tugas 2 -> Build integration bootstrap with previous task.
   * Tugas 3 -> Do configuration in settings.py to adding html template.
   * Tugas 4 -> Run Django-Framework with Docker Container (Repair Dockerfile).

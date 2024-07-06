@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>{{ form.instance.pk|yesno:"Update Course,Create Course" }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{{ form.instance.pk|yesno:"Update,Create" }}</button>
+    </form>
+    <a href="{% url 'account:read-data-course' %}">Back to course list</a>
+
+{% endblock %}

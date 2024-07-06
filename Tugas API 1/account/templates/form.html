@@ -1,0 +1,113 @@
+{% load static %}
+{% block content %}
+<style type="text/css">
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main_business {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+.form-control:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.panel-footer {
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #337ab7;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #23527c;
+}
+
+.m-top-20 {
+  margin-top: 20px;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-danger {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+</style>
+    <div class="container">
+        <div class="row">
+            <div class="main_business">
+                <div class="col-md-12">
+                    {% if form.errors %}
+                        <div class="alert alert-danger">
+                            {% for field in form %}
+                                {% if field.errors %}
+                                    <strong>{{ field.label }}: {{ field.errors|join:", " }}</strong>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <br>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <form method="post" id="create-form" name="create-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="fullname">Input Nama Lengkap</label>
+            <input type="text" name="fullname" id="fullname" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="nim">Input NIM Lengkap</label>
+            <input type="text" name="nim" id="nim" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="email">Input Email Lengkap</label>
+            <input type="email" name="email" id="email" class="form-control">
+        </div>
+        <div class="panel-footer text-center">
+            <button class="btn btn-primary m-top-20">Simpan</button>
+        </div>
+    </form>
+{% endblock %}

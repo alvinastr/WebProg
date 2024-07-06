@@ -1,0 +1,113 @@
+{% load static %}
+{% block content %}
+<style type="text/css">
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.create-btn {
+  background-color: #337ab7;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create-btn:hover {
+  background-color: #23527c;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+.actions {
+  text-align: center;
+}
+
+.actions a {
+  margin: 0 10px;
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.actions a:hover {
+  color: #23527c;
+}
+
+.empty-data {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #666;
+}
+</style>
+    {% if messages %}
+        <div class="alert alert-success">
+            {% for message in messages %}
+                <strong>{{ message }}</strong>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+
+    <a href="{% url 'account:create-data-student' %}">Create</a>
+
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>e-mail</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for obj in data_list %}
+                <tr>
+                    <td>{{ obj.account_user_student_number }}</td>
+                    <td>{{ obj.account_user_fullname }}</td>
+                    <td>{{ obj.account_user_related_user }}</td>
+                    <td>
+                        <a href="{% url 'account:update-data-student' obj.account_user_related_user %}">Update</a>
+                        <br>
+                        <a href="{% url 'account:delete-data-student' obj.account_user_related_user %}">Delete</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">
+                        <h1>Data masih kosong</h1>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -13,6 +13,7 @@
   * Tugas 5 -> Update Logic for Update and Delete.
 
   * Tugas API 1 -> Create API with Methods PUT & DELETE
+  * Tugas API 2 -> Create ConsumeApiPost in views_api.py
 
 
 

@@ -1,0 +1,9 @@
+{% block content %}
+{% if response %}
+<h2>API Response:</h2>
+<pre>{{ response | json_script:"api-response" }}</pre>
+{% elif error %}
+<h2>Error:</h2>
+<p>{{ error }}</p>
+{% endif %}
+{% endblock %}

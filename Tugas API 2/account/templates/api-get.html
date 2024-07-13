@@ -1,0 +1,38 @@
+{% load static %}
+{% block content %}
+{% if messages %}
+    <div class="alert alert-success">
+        {% for message in messages %}
+            <strong>{{ message }}</strong>
+        {% endfor %}
+    </div>
+{% endif %}
+<table border="1">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Company</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for obj in data %}
+            <tr>
+                <td>{{ obj.id }}</td>
+                <td>{{ obj.name }}</td>
+                <td>{{ obj.username }}</td>
+                <td>{{ obj.email }}</td>
+                <td>{{ obj.phone }}</td>
+                <td>{{ obj.company }}</td>
+                <td>{{ obj.address }}</td>
+            </tr>
+            {% empty %}
+                <h1>Data masih kosong</h1>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
